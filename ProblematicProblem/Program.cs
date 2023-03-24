@@ -6,8 +6,6 @@ namespace ProblematicProblem
 {
     class Program
     {
-        
-
         public static Random rng = new Random();
         public bool cont = true;
         
@@ -19,6 +17,10 @@ namespace ProblematicProblem
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
             bool cont = InputToBool.InToBool();
+            if (!cont)
+            {
+                Console.WriteLine("well, we're gonna proceed ayways.");
+            }
             Console.WriteLine();
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
@@ -54,7 +56,7 @@ namespace ProblematicProblem
                     addToList = InputToBool.InToBool();
                 }
             }
-
+            Console.WriteLine("Would you like to continue?");
             cont = InputToBool.InToBool();
 
             while (cont)
@@ -83,6 +85,9 @@ namespace ProblematicProblem
                 }
                 Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
+                Console.WriteLine("OK, I guess we're all done then!");
+                Console.WriteLine("Again?");
+                cont = InputToBool.InToBool();
             }
         }
     }
